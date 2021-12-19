@@ -14,10 +14,12 @@ const cors = require("cors");
 
 app.use(cors({ origin: "https://livechatfrontend.herokuapp.com" }));
 
-const httpServer = require("https").createServer(app);
+const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
     origin: "https://livechatfrontend.herokuapp.com",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["my-custom-header"],
     credentials: true,
   },
 });
