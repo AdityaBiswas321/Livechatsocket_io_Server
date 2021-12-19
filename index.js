@@ -12,10 +12,11 @@ const router = require("./router");
 const app = express();
 const cors = require("cors");
 
-const httpServer = require("http").createServer(app);
+const httpServer = require("https").createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://livechatsocket.herokuapp.com/",
+    credentials: true,
   },
 });
 
