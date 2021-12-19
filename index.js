@@ -15,7 +15,7 @@ const cors = require("cors");
 const httpServer = require("https").createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
-    origin: "https://livechatsocket.herokuapp.com/",
+    origin: "https://livechatsocket.herokuapp.com",
     credentials: true,
   },
 });
