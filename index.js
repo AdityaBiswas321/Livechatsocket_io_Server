@@ -12,6 +12,8 @@ const router = require("./router");
 const app = express();
 const cors = require("cors");
 
+app.use(cors());
+
 const httpServer = require("https").createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
